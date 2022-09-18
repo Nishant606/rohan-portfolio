@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import { useContext, useEffect } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import './App.css';
+import Experience from './components/Experience';
+import Landing from './components/Landing/Landing';
+import Projects from './components/Projects';
+import { ThemeContext } from './Context/DarkTheme';
+
+import { GlobalStyles } from './global';
 
 function App() {
+  const { lightMode, setLightMode } = useContext(ThemeContext);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GlobalStyles lightMode={lightMode} />
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Landing />}></Route>
+          <Route exact path="/experience" element={<Experience />}></Route>
+          <Route exact path="/projects" element={<Projects />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
