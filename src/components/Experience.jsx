@@ -83,6 +83,7 @@ const Child = ({ yearFrame, title, description }) => {
 };
 
 const ExperienceWrapper = styled.div`
+  height: 95vh;
   & .heading {
     font-size: 42px;
   }

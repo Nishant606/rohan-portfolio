@@ -10,10 +10,7 @@ import {
 import { ThemeContext } from '../../../Context/DarkTheme';
 const Navbar = () => {
   const { lightMode, setLightMode } = useContext(ThemeContext);
-  const [checked, setChecked] = useState(false);
-  const handleThemeChange = (event) => {
-    setChecked(event);
-  };
+
   console.log(lightMode);
   return (
     <NavbarWrapper lightMode={lightMode}>
@@ -30,18 +27,25 @@ const Navbar = () => {
         <Switch
           onChange={setLightMode}
           checked={lightMode}
-          // width={60}
-          // activeBoxShadow={'none'}
-          // checkedIcon={<MdOutlineDarkMode className="icon" />}
-          // uncheckedIcon={<MdOutlineWbSunny className="icon" />}
-          // checkedHandleIcon={<MdWbSunny className="handle-icon" />}
-          // uncheckedHandleIcon={<MdDarkMode className="handle-icon" />}
-          // onHandleColor={'#000'}
-          // offHandleColor={'#000'}
-          // onColor={'#000'}
-          // borderRadius={'20px'}
-          // offColor={'#000'}
-          // className="switch"
+          width={60}
+          activeBoxShadow={'none'}
+          checkedIcon={<MdOutlineDarkMode className="icon" />}
+          uncheckedIcon={
+            <MdOutlineWbSunny
+              className="icon"
+              css={`
+                width: 30px;
+                margin-top: 2px;
+              `}
+            />
+          }
+          checkedHandleIcon={<MdWbSunny className="handle-icon" />}
+          uncheckedHandleIcon={<MdDarkMode className="handle-icon" />}
+          onHandleColor={'#eee'}
+          offHandleColor={'#000'}
+          onColor={lightMode ? '#eee' : '#000'}
+          offColor={lightMode ? '#eee' : '#000'}
+          className="switch"
         />
       </div>
     </NavbarWrapper>
@@ -53,9 +57,10 @@ export default Navbar;
 const NavbarWrapper = styled.div`
   display: flex;
   align-items: center;
-
+  max-width: 1200px;
+  margin: 50px auto;
   & .logo {
-    color: ${(props) => (props.lightMode ? '#000' : 'var(--primary-color)')};
+    color: var(--primary-color);
     font-size: 24px;
     text-decoration: none;
     flex: 1;
@@ -65,11 +70,13 @@ const NavbarWrapper = styled.div`
     flex: 1;
     text-align: right;
     & .switch {
+      border-radius: 20px !important;
       border: 2px solid var(--primary-color);
     }
 
     & .icon {
       font-size: 20px;
+      margin-left: 2px;
     }
     & .handle-icon {
       font-size: 25px;
@@ -79,6 +86,9 @@ const NavbarWrapper = styled.div`
   & .proff-list {
     span {
       margin: 0 10px;
+      &:hover {
+        color: var(--primary-color);
+      }
     }
   }
 `;

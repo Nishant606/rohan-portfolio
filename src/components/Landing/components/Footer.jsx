@@ -3,9 +3,23 @@ import styled from 'styled-components/macro';
 const Footer = () => {
   return (
     <FooterWrapper>
-      <a href="_">Upwork</a>
-      <a href="_">LinkedIn</a>
-      <a href="_">Github</a>
+      <a
+        href="https://www.upwork.com/freelancers/~01180dd6e6d2885ae1"
+        rel="noreferrer"
+        target="_blank"
+      >
+        Upwork
+      </a>
+      <a
+        href="linkedin.com/in/rohan-singh-b1632a1a8"
+        rel="noreferrer"
+        target="_blank"
+      >
+        LinkedIn
+      </a>
+      <a href="Rohats7203.GitHub.io" rel="noreferrer" target="_blank">
+        Github
+      </a>
     </FooterWrapper>
   );
 };
@@ -13,12 +27,18 @@ const Footer = () => {
 export default Footer;
 
 const FooterWrapper = styled.div`
-  position: fixed;
+  position: relative;
   bottom: 0;
-  margin-bottom: 20px;
+  margin: auto;
+  text-align: left;
+  max-width: 1200px;
+
   a {
-    margin: 0 10px;
-    color: #fff;
+    margin-right: 10px;
+    color: var(--normal-text);
     text-decoration: none;
+    &:hover {
+      color: var(--primary-color);
+    }
   }
 `;

@@ -24,11 +24,23 @@ const BodySection = () => {
         <Section
           title={'Socials'}
           description={
-            <>
-              Twitter
+            <div className="hover">
+              <a
+                href="https://twitter.com/rohats7203"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Twitter
+              </a>
               <br />
-              Instagram
-            </>
+              <a
+                href="https://www.instagram.com/https.rohan.rs/"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Instagram
+              </a>
+            </div>
           }
         />
       </div>
@@ -39,17 +51,17 @@ const BodySection = () => {
         <Section
           title={'Services'}
           description={
-            <>
-              <>Website Design</>
+            <div className="hover">
+              <span>Website Design</span>
               <br />
-              <>Mobile Application Design</>
+              <span>Mobile Application Design</span>
               <br />
-              <>Website Developement (Flutter)</>
+              <span>Website Developement (Flutter)</span>
               <br />
-              <>Mobile Application Developement (Flutter)</>
+              <span>Mobile Application Developement (Flutter)</span>
               <br />
-              <>Website Design</>
-            </>
+              <span>Website Design</span>
+            </div>
           }
         />
       </div>
@@ -86,10 +98,10 @@ const Section = ({ title, description }) => {
 };
 
 const BodyContainer = styled.div`
+  max-width: 1200px;
   display: flex;
-
-  margin-top: 50px;
-  justify-content: center;
+  margin: 50px auto;
+  justify-content: space-between;
   align-items: center;
 
   & .left {
@@ -101,5 +113,18 @@ const BodyContainer = styled.div`
     text-align: right;
     display: flex;
     flex-direction: column;
+  }
+
+  & .hover {
+    span,
+    a {
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+    a {
+      text-decoration: none;
+      color: var(--normal-text);
+    }
   }
 `;

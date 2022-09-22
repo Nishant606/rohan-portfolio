@@ -11,7 +11,7 @@ const Landing = ({ setTheme, theme }) => {
   }, []);
   setTimeout(() => {
     landRef.current.style.filter = 'grayscale(0%)';
-  }, 600);
+  }, 1600);
   return (
     <div
       ref={landRef}
@@ -20,7 +20,6 @@ const Landing = ({ setTheme, theme }) => {
       `}
     >
       <Navbar />
-
       <BodySection />
       <Footer />
     </div>
