@@ -14,7 +14,7 @@ const ContactPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    send('service_egwpk7i', 'template_g9nchag', details, 'OGdpfQhpNmj7uHH5m')
+    send('service_18ge0gk', 'template_rdz3moc', details, 'zHQTJbrm348GxUeXr')
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
       })
