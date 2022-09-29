@@ -1,4 +1,4 @@
-import { FiFacebook, FiInstagram, FiLinkedin, FiTwitter } from 'react-icons/fi';
+import { FiInstagram, FiLinkedin, FiTwitter } from 'react-icons/fi';
 
 export const socials = [
   // { icon: <FiFacebook className="icon" />, linkTo: '/', name: 'facebook' },

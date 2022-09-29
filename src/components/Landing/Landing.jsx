@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import BodySection from './components/BodySection';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import styled from 'styled-components/macro';
+import 'styled-components/macro';
 const Landing = ({ setTheme, theme }) => {
   const landRef = useRef();
   useEffect(() => {
